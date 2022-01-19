@@ -1,0 +1,33 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.footer_element{
+    width:20%;
+}
+
+.link{
+    text-decoration: none;
+    color:black;
+}
+
+.link_button{
+    width:80%;
+    height:50px;
+}
+
+button_style{
+    width:80%;
+    height:50px;
+    background-color: #999999;
+    border: none;
+    color: whitesmoke;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font_size: 20px;
+    margin: 4px 2px;
+    curdor: pointer;
+}
