@@ -17,6 +17,13 @@
     height:50px;
 }
 
+.link_button_light{
+    width: 80%;
+    background-color:#dddddd;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 button_style{
     width:80%;
     height:50px;
@@ -30,4 +37,8 @@ button_style{
     font_size: 20px;
     margin: 4px 2px;
     curdor: pointer;
+}
+
+hr{
+    color: greenyellow;
 }
