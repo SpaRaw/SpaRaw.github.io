@@ -1,0 +1,158 @@
+:root{
+    /*  Variabeln  */
+    --primary-color: rgb(255, 240, 216);
+    --secondary-color: rgb(205, 170, 109);
+    --accent-color: rgb(153, 0, 26);
+    --font: 'Oswald';
+    --page-width: 80%;
+    --top-padding: 15px;
+    --color-water-mark: rgb(204, 192, 216)
+}
+
+*{
+    /* Reset */
+    margin: 0;
+    padding: 0;
+    font-family: var(--font), sans-serif;
+    text-align: center;
+    font-size: x-large;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+body{
+    background-color: var(--secondary-color);
+
+}
+
+div{
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color)
+}
+
+#creator{
+    font-size: smaller;
+    font-weight: lighter;
+    color: var(--color-water-mark)
+}
+
+/* Handy Layout */
+
+
+/* Tablet Layout */
+@media only screen and (min-width: 600px){
+    *{
+        background-color: teal;
+    }
+
+    .link_button{
+        text-decoration: none;
+        color: black;
+        border: 5px var(--accent-color) inset ;
+        padding-right: 25px;
+        padding-left: 25px;
+        background-color: var(--secondary-color);
+
+    }
+
+    /* Header Styling */
+    #logo{
+        height: 150px;
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #nav{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+
+    /* footer */
+    #footer{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #creator{
+       text-align: center;
+    }
+
+
+}
+
+/* Desktop Layout */
+@media only screen and (min-width: 1000px){
+
+    /* Klassen */
+    .link_button{
+        text-decoration: none;
+        color: black;
+        border: 5px var(--accent-color) inset ;
+        padding-right: 25px;
+        padding-left: 25px;
+
+    }
+
+    .flex{
+        display: flex;
+    }
+
+
+    /* Page */
+    #page{
+        position: fixed;
+        top: 0;
+        left: 10%;
+        width: var(--page-width);
+        height: 100%;
+    }
+
+    /* Header */
+    #header{
+        position: fixed;
+        top: 0;
+        height: 10%;
+        width: var(--page-width);
+    }
+
+    #logo{
+        width: 200px;
+        height: 200px;
+        float: left;
+    }
+
+    #nav{
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Content */
+    #main{
+        position: fixed;
+        top: 10%;
+        height: 85%;
+        width: var(--page-width);
+
+    }
+
+    /* Footer */
+    #footer{
+        position: fixed;
+        bottom: 0;
+        height: 5%;
+        width: var(--page-width);
+        padding-top: var(--top-padding);
+        border-top: 5px var(--accent-color) solid;
+
+    }
+
+    #impressum{
+        float: left;
+    }
+}

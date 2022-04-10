@@ -1,0 +1,295 @@
+:root{
+    /*  Variabeln  */
+    --primary-color: rgb(255, 240, 216);
+    --secondary-color: rgb(205, 170, 109);
+    --accent-color: rgb(153, 0, 26);
+    --font: 'Oswald';
+    --page-width: 80%;
+    --top-padding: 15px;
+    --color-water-mark: rgb(204, 192, 216);
+    --nav-item-width-pc: 15%;
+}
+
+#creator{
+    color: var(--color-water-mark);
+}
+
+/*  Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Debugg */
+div{
+    border: 1px solid var(--accent-color);
+}
+/* Handy layout */
+body{
+    background-color: var(--primary-color);
+}
+
+/* Text centered */
+.text-centered{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    text-align: center;
+}
+
+
+/* Handy Layout */
+@media only screen and (max-width: 671px){
+    /* page */
+    #page{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 10%;
+        z-index: 1;
+    }
+
+    /* Logo */
+    #logo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        z-index: 2;
+        background-color: var(--secondary-color);
+    }
+
+    /* Navigation */
+    #nav{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 10%;
+        width: 100%;
+        z-index: 2;
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #home{
+        width: 20%;
+    }
+    #speisekarte{
+        width: 20%;
+    }
+    #kontakt{
+        width: 20%;
+    }
+    #produkt{
+        width: 20%;
+    }
+    #besuch{
+        width: 20%;
+    }
+
+    /* Footer */
+    #footer{
+        position: absolute;
+        height: 6%;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    #impressum{
+        width: 25%;
+    }
+
+    #datenschutz{
+        width: 25%;
+    }
+}
+
+
+
+/* Tablet layout */
+@media only screen and (min-width: 672px) and (max-width: 990px){
+    body{
+        background-color: var(--primary-color);
+    }
+
+    /* Page */
+    #page{
+        position: absolute;
+        top: 20%;
+    }
+
+    /* header */
+    #header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 20%;
+        z-index: 1;
+
+    }
+
+    /* Logo */
+    #logo{
+        position: fixed;
+        top:0;
+        height: 10%;
+        width: 100%;
+        background-color: var(--secondary-color);
+    }
+
+    /* Navbar */
+    #nav{
+        position: fixed;
+        height: 10%;
+        width: 100%;
+        top: 10%;
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #home{
+        width: 20%;
+    }
+
+    #speisekarte{
+        width: 20%;
+    }
+
+    #kontakt{
+        width: 20%;
+    }
+
+    #produkt{
+        width: 20%;
+    }
+
+    #besuch{
+        width: 20%;
+    }
+
+    /* Main Content */
+    #main{
+        position: relative;
+        top: 20%;
+        left: 0;
+        height: 75%;
+
+    }
+
+
+    /* Footer */
+    #footer{
+        position: fixed;
+        top: 95%;
+        left: 0;
+        height: 5%;
+        width: 100%;
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Impressum */
+    #impressum{
+        width: 25%;
+    }
+
+    /* Daten Schutz */
+    #datenschutz{
+        width: 25%;
+    }
+}
+
+
+
+/* Desktop layout */
+@media only screen and (min-width: 991px){
+    body{
+        background-color: var(--primary-color);
+    }
+
+    #page{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* header */
+    #header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        background-color: var(--secondary-color);
+    }
+
+    #logo{
+        width: 15%;
+        height: 100%;
+    }
+
+    #nav{
+        position: fixed;
+        display: flex;
+        top: 3.5%;
+        height: 8%;
+        left: 20%;
+        width: 75%;
+
+    }
+
+    #home{
+        width: 20%;
+    }
+
+    #speisekarte{
+        width: 20%;
+    }
+
+    #kontakt{
+        width: 20%;
+    }
+
+    #produkt{
+        width: 20%;
+    }
+
+    #besuch{
+        width: 20%;
+    }
+
+    /* main */
+    #main{
+        position: relative;
+        top: 15%;
+        left: 0;
+        height: 80%;
+    }
+
+
+    /* footer */
+    #footer{
+        position: fixed;
+        top: 95%;
+        height: 5%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #datenschutz{
+        width: 25%;
+    }
+
+    #impressum{
+        width: 25%;
+    }
+}
