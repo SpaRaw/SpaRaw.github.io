@@ -1,0 +1,23 @@
+:root{
+    /*  Variabeln  */
+    --primary-color: rgb(255, 240, 216);
+    --secondary-color: rgb(205, 170, 109);
+    --accent-color: rgb(153, 0, 26);
+    --font: 'Oswald';
+    --page-width: 80%;
+    --top-padding: 15px;
+    --color-water-mark: rgb(204, 192, 216);
+    --nav-item-width-pc: 15%;
+}
+
+
+/*  Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Debugg */
+div{
+    border: 1px solid var(--accent-color);
+}
