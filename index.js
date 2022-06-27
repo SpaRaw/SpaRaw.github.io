@@ -2,8 +2,9 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const gravity = 0.6
 
-canvas.width = 1024
-canvas.height = 576
+
+canvas.width = 1280
+canvas.height = 720
 
 c.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -25,6 +26,8 @@ class Sprite{
 		},
 		this.color = color
 		this.isAttacking
+		this.health = 100
+		this.winns = 0
 	}
 	
 	draw(){
@@ -127,6 +130,50 @@ function rectCollision({rectangle1, rectangle2}){
 			rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height 
 }
 
+let time = 60
+let timerID
+let is_score_updated = false
+document.querySelector("#pwin").innerHTML = player.winns
+document.querySelector("#ewin").innerHTML = enemy.winns
+
+function determin_winner({player, enemy, timerID}){
+	clearTimeout(timerID)
+	if(player.health === enemy.health){
+		document.querySelector("#result").innerHTML = "Unentschieden" 
+		game_ended = true
+	}
+	
+	if(player.health > enemy.health){			
+		document.querySelector("#result").innerHTML = "Spieler hat gewonnen" 
+		document.querySelector("#pwin").innerHTML = player.winns
+		if(!is_score_updated){
+			is_score_updated = true
+			player.winns++
+		}
+	}
+		
+	if(player.health < enemy.health){			
+		document.querySelector("#result").innerHTML = "Enemy hat gewonnwn" 
+		document.querySelector("#ewin").innerHTML = enemy.winns	
+		if(!is_score_updated){
+			is_score_updated = true
+			enemy.winns++
+		}
+	}
+}
+function dec_timer(){
+	
+	if(time> 0) {
+		timerID = setTimeout(dec_timer, 1000)
+		document.querySelector("#timer").innerHTML = --time
+	}else if(time === 0){
+		determin_winner({player, enemy, timerID})
+	}
+}
+
+dec_timer()
+
+
 function animate(){
 	window.requestAnimationFrame(animate)
 	c.fillStyle = 'black'
@@ -158,21 +205,39 @@ function animate(){
 		rectangle2: enemy
 	}) && player.isAttacking){
 		console.log("player hit")
+		if(enemy.health > 10){
+			enemy.health -= Math.floor((Math.random()*5)+1)
+		}else{
+			enemy.health = 0
+		}
+		document.querySelector('#enemy').style.width = enemy.health + '%'
 	}
 	
 		//detect for collison enemy 
 	if(rectCollision({
 		rectangle1: enemy,
 		rectangle2: player
-	}) && enemy.isAttacking){
+	}) && enemy.isAttacking ){
+		console.log(enemy.cooldown)
 		console.log("enemy hit")
+		if(player.health > 10){
+			player.health -= Math.floor((Math.random()*5)+1)
+		}else{
+			player.health = 0
+		}
+		document.querySelector('#player').style.width = player.health + '%'
+	}
+	
+	
+	//game end based on health
+	if(enemy.health <= 0 || player.health <=0){
+		determin_winner({player, enemy, timerID})
 	}
 }
 
 animate()
 
 window.addEventListener('keydown', (event)=> {
-	//console.log(event.key)
 	switch(event.key){
 		case 'd':
 		keys.d.pressed = true
@@ -186,7 +251,7 @@ window.addEventListener('keydown', (event)=> {
 		
 		case 'w':
 		if(player.velocity.y == 0){
-			player.velocity.y -= 20
+			player.velocity.y -= 15
 		}
 		break
 		
@@ -206,11 +271,11 @@ window.addEventListener('keydown', (event)=> {
 		
 		case 'ArrowUp':
 		if(enemy.velocity.y == 0){
-			enemy.velocity.y -= 20
+			enemy.velocity.y -= 15
 		}
 		break
 		
-		case '0':
+		case 'ArrowDown':
 		enemy.attack()
 		break
 	}

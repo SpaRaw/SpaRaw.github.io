@@ -3,9 +3,33 @@
 		<link href="style.css" rel="stylesheet">
 	</head>
 	<body>
-		<canvas id="can">
-		</canvas>
-		<script src="index.js">
-		</script>
+	<!-- UI -->
+	<div  id="ui" >
+		<div id="smaller">
+			<!-- player health -->
+			<div class="health-div player">
+				<div class="health-bar">
+				</div>
+				<div id="player" class="hit-max-player" > </div>
+			</div>
+			
+			<!-- timer -->
+			<div id="timer"> 10 </div>
+			<!-- enemy health -->
+			<div class="health-div">
+				<div class="health-bar"></div>
+				<div id="enemy" class="hit-max"> </div>
+			</div>
+			
+		</div>
+		<canvas id="can"></canvas>
+		<div id="score-board">
+		<div id="player-win"> Player Wins: <span id="pwin"> </span> </div>
+		<div id="result">  </div>
+		<div id="enemy-win"> Enemy Wins: <span id="ewin"> </span> </div>
+	</div>
+	</div>
+
+	<script src="index.js"></script>
 	</body>
 </html>

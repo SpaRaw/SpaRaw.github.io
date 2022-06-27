@@ -1,8 +1,94 @@
+:root{
+	--health-color: #b0bc00 ;
+	--height: 30px;
+	--width: 100%;
+}
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+	
 }
+
 
 body{
 	background-color: #40826d;
+}
+
+#ui{
+	position: relative;
+	display: inline-block;
+}
+#smaller{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+}
+
+
+#timer{
+	width: 100px;
+	height: 100px;
+	background-color: #f44e3b;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: xxx-large;
+}
+
+#score-board{
+	width: 100%;
+	font-size: xx-large;
+	display: flex;
+	justify-content: space-between;
+	flex-shrink: 0;
+}
+
+#result{
+	width: 33.3%;
+}
+
+.health-div{
+	position: relative;
+	height: var(--height);
+	width: var(--width);
+}
+.health-bar{
+	background-color:  #f57460;
+	height: var(--height);
+	width: var(--width);
+	
+
+}
+
+
+.hit-max{
+	position: absolute;
+	background-color: var(--health-color);
+	height: var(--height);
+	width: var(--width);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+}
+
+.hit-max-player{
+	position: absolute;
+	background-color: var(--health-color);
+	height: var(--height);
+	width: var(--width);
+	top: 0;
+	
+	bottom: 0;
+	right: 0;
+
+}
+.player{
+	display: flex;
+	justify-content: flex-end
 }
